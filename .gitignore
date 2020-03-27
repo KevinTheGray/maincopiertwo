@@ -107,3 +107,6 @@ coverage/
 !.idea/codeStyles/
 !.idea/dictionaries/
 !.idea/runConfigurations/
+
+# Generated files
+/lib/main.dart
