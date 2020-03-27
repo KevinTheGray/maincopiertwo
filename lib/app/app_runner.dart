@@ -14,13 +14,13 @@ Future<void> runAppRoot(AppFlavor appFlavor) async {
   BlocSupervisor.delegate = AppBlocDelegate();
   final userRepository = FakeUserRepository();
   runApp(
-    BlocProvider<AuthenticationBloc>(
-      create: (_) => AuthenticationBloc(
-        userRepository: userRepository,
-      )..add(AppStarted()),
-      child: RepositoryProvider<UserRepository>.value(
-        value: userRepository,
-        child: AppRoot(),
+    MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text(
+            appFlavor.toString(),
+          ),
+        ),
       ),
     ),
   );
